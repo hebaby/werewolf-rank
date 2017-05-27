@@ -1,0 +1,10 @@
+{
+    "data": [{
+        "roomId": 123,
+        "result": "胜利"
+    },{
+        "roomId": 124,
+        "result": "失败"
+    }]
+}
+

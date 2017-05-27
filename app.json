@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/rank/rank",
+    "pages/index/index",
+    "pages/god/game/day/day",
+    "pages/god/game/night/night",
+    "pages/god/room/room",
+    "pages/god/config/config",
+    "pages/player/room/room",
+    "pages/player/join/join",
+    "pages/logs/logs",
+    "pages/history/history"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "狼人天梯榜",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": false
+  },
+   "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/rank/rank",
+      "iconPath": "image/config.png",
+      "selectedIconPath": "image/config.png",
+      "text": "天梯"
+    }, {
+      "pagePath": "pages/index/index",
+      "iconPath": "image/game.png",
+      "selectedIconPath": "image/game.png",
+      "text": "游戏"
+    }, {
+      "pagePath": "pages/history/history",
+      "iconPath": "image/contact.png",
+      "selectedIconPath": "image/game.png",
+      "text": "我的"
+    }]
+  }
+}

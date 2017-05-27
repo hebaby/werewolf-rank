@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+    <view class="section-title">游戏模式</view>
+    <radio-group class="config-mode" bindchange="radioChange">
+      <label class="radio">
+        <radio value="0" checked="true"/>天梯模式
+        <radio value="1" disabled="true"/>自由模式
+      </label>
+    </radio-group>
+    <view class="section-title">游戏人数</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{numberList}}">
+      <view class="picker">
+        当前选择：{{numberList[index]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="section" wx:for="{{configList}}" wx:for-item="configItem" bindtap="joinRoom" wx:for-index="index" data-index="{{index}}" wx:if="{{configList.length>0}}">
+     <view class="config-detail">
+        <view class="config-detail-item" wx:for="{{configItem.groupedItems}}" wx:for-item="camp">
+          <view class="detail-camp">
+            <text wx:if="{{camp[0].roleCamp==0}}">平民阵营</text>
+            <text wx:if="{{camp[0].roleCamp==1}}">神民阵营</text>
+            <text wx:if="{{camp[0].roleCamp==2}}">狼人阵营</text>
+          </view>
+          <view class="detail-role" wx:for="{{camp}}" wx:for-item="role">
+              {{role.roleName}}
+            <view class="detail-number" wx:if="{{role.amount>1}}">*{{role.amount}}</view> 
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class="section" wx:if="{{configList.length==0}}">
+    当前人数没有板子配置。
+  </view>
+</view>
+

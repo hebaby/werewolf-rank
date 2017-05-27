@@ -1,0 +1,113 @@
+/**index.wxss**/
+.container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+}
+
+.info-area {
+  font-size: 14px;
+  position: absolute;
+  height: 48%;
+  width: 100%;
+  top: 0;
+  bottom: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.info-title {
+  font-size: 20px;
+  margin: 50rpx;
+}
+.info-content{
+  font-size: 16px;
+  margin: 50rpx；
+}
+.info-tips {
+  font-size: 14px;
+  margin: 30rpx;
+}
+.info-button-style {
+  margin-right: 30rpx;
+}
+.info-button {
+  width: 100%;
+  bottom: 10%;
+  position: absolute;
+}
+
+.player-area {
+  margin-top: 30rpx;
+  width: 600rpx;
+  height: 50%;
+  position: fixed;
+  bottom: 10rpx;
+}
+.player-item {
+  margin-bottom: 20rpx;
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+  position: relative;
+}
+.high-light-true{
+  background-color: rgba(0,0,255,.5);
+}
+.player-index {
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.player-info {
+  width: 130rpx;
+  height: 130rpx;
+  position: absolute;
+  overflow: hidden;
+  text-align:center;
+  font-size: 14px;
+  bottom: 5rpx;
+  right: 5rpx;
+  border-radius: 10rpx;
+  background-color: lightgray;
+}
+.player-image {
+  width: 130rpx;
+  height: 130rpx;
+}
+.player-content {
+  line-height: 130rpx;
+  font-size: 12px;
+}
+.is-dead-true {
+  -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);	
+    filter: gray;
+    border-radius: 10rpx;
+}
+.text-dead {
+  z-index: 5;
+  position: absolute;
+  top: 20rpx;
+  right: 15rpx;
+  color: red;
+  font-weight: bold;
+}
+
+.text-role {
+  z-index: 5;
+  font-size: 12px;
+  position: absolute;
+  bottom: 5rpx;
+  right: 5rpx;
+  color: red;
+}

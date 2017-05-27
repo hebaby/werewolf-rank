@@ -1,0 +1,27 @@
+{
+    "success": true, 
+    "data": {
+        "roomId": "12345",
+        "count": "1",
+        "nightInfo": [
+            {
+                "number": 2,
+                "roleAvatar":"http://p1.meituan.net/pro/71e0c81441530a91d74d7c22e62defac2360.png",
+                "roleId": 0,
+                "roleName": "村民",
+                "userAvatar": "http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83ergjK8Gj5icBUG09PyUTpsngxse7tia6gRw9ckpHkxjJlOL22iclDdkrcoHibjj5YA7R6HEJxY7ibm2sgg/0",
+                "userId": 15,
+                "userName": "大明"
+            },{
+                "number": 2,
+                "roleAvatar":"http://p1.meituan.net/pro/71e0c81441530a91d74d7c22e62defac2360.png",
+                "roleId": 0,
+                "roleName": "村民",
+                "userAvatar": "http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83ergjK8Gj5icBUG09PyUTpsngxse7tia6gRw9ckpHkxjJlOL22iclDdkrcoHibjj5YA7R6HEJxY7ibm2sgg/0",
+                "userId": 15,
+                "userName": "大明"
+            }
+        ]
+    }
+}
+

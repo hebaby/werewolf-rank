@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="info-area">
+    <view class="info-title">
+      {{infoTitle}}
+    </view>
+    <view class="info-content">
+      {{infoContent}}
+    </view>
+    <view class="info-tips">
+      {{infoTips}}
+      <text wx:if="{{selectIndex!=-1}}">{{playList[selectIndex].number}}号{{playList[selectIndex].userName}}</text>
+    </view>
+    <view class="info-button">
+      <button type="default" size="mini" class="info-button-style" bindtap="backButton">上一步</button>
+      <button type="default" size="mini" bindtap="nextButton">下一步</button>
+    </view>
+  </view>
+  <scroll-view class="player-area" scroll-y="true">
+    <view class="player-item high-light-{{index==selectIndex}}" wx:for="{{playList}}" wx:for-item="play" wx:for-index="index" bindtap="selectPlayer" data-index="{{index}}">
+      <view class="player-index">
+        {{index+1}}
+      </view>
+      <view class="player-info">
+        <image class="player-image is-dead-{{play.dead==true}}" src="{{play.userAvatar}}" wx:if="{{play.userId>0}}"></image>
+      </view>
+      <view class="text-dead" wx:if="{{play.dead==true}}">已死亡</view>
+      <view class="text-role">{{play.roleName}}</view>
+    </view>
+  </scroll-view>
+</view>
+

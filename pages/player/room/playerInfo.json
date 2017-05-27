@@ -1,0 +1,70 @@
+{
+    "success": true, 
+    "data": {
+            "number": 12,
+            "playList": [
+                {
+                    "isused": true,
+                    "playerId": "123",
+                    "playerName": "大明",
+                    "imageSrc": "http://img.small.hudongba.com/upload/_cos/userhead/yuantu/201506/1614/6ygbj1434436156255.jpg@!user-head"
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": true,
+                    "playerId": 126,
+                    "playerName": "小红",
+                    "imageSrc": "http://img.small.hudongba.com/upload/_oss/userhead/yuantu/201701/0915/uwhof1483946934465.jpg@!user-head"
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": true,
+                    "playerId": "124",
+                    "playerName": "小王",
+                    "imageSrc": "http://img.small.hudongba.com/upload/_oss/userhead/yuantu/201609/2415/2tfpv1474700655386.jpg@!user-head"
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                },{
+                    "isused": false,
+                    "playerId": null,
+                    "playerName": null,
+                    "imageSrc": null
+                }
+            ]
+        }
+}
+

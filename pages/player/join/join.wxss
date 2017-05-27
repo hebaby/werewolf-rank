@@ -1,0 +1,28 @@
+/**index.wxss**/
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.input-area {
+  font-size: 20px;
+  margin: 20rpx;
+}
+
+.input-room {
+  width: 300rpx;
+  margin-top: 20rpx;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.button-area {
+  margin-top: 100rpx;
+}

@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="config-area">
+    <view class="config-room">
+      房间号：{{roomId}}
+    </view>
+    <view>
+      <text class="config-mode" wx:if="{{mode==0}}">天梯模式</text>
+      <text class="config-mode" wx:if="{{mode==1}}">自由模式</text>
+      <view class="config-detail">
+        <view class="config-detail-item" wx:for="{{configData.groupedItems}}" wx:for-item="camp">
+          <view class="detail-camp">
+            <text wx:if="{{camp[0].roleCamp==0}}">平民阵营</text>
+            <text wx:if="{{camp[0].roleCamp==1}}">神民阵营</text>
+            <text wx:if="{{camp[0].roleCamp==2}}">狼人阵营</text>
+          </view>
+          <view class="detail-role" wx:for="{{camp}}" wx:for-item="role">
+              {{role.roleName}}
+            <view class="detail-number" wx:if="{{role.amount>1}}">*{{role.amount}}</view> 
+          </view>
+        </view>
+      </view>
+    </view>
+    <button type="default" bindtap="startGame" size="mini"> 开始游戏 </button>
+  </view>
+  <scroll-view class="player-area" scroll-y="true">
+    <view class="player-item" wx:for="{{playList}}" wx:for-item="play" wx:for-index="index" bindtap="joinRoom" data-index="{{index}}">
+      <view class="player-index">
+        {{index+1}}
+      </view>
+      <view class="player-info">
+        <image class="player-image" src="{{play.userAvatar}}" wx:if="{{play.userId>0}}"></image>
+        <text class="player-content">点击入座</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

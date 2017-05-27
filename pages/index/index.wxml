@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="image-area">
+    <image class="image-item" src="{{src}}" mode="scaleToFill"></image>
+  </view>
+
+
+  <view class="button-area">
+    <view bindtap="createRoom" class="create-room index-bottom">
+      创建房间
+    </view>
+    <view bindtap="joinRoom" class="join-room index-bottom">
+      加入房间
+    </view>
+  </view>  
+</view>

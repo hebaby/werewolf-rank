@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="input-area">
+    <view class="input-item">
+      <text>房间号</text>
+      <input bindinput="bindKeyInput" class="input-room" placeholder="请输入房间号" auto-focus/>
+    </view>
+    <!--<view class="input-item">
+      <text>请输入密码：</text>
+      <input placeholder="无密码无需输入" auto-focus/>
+    </view>-->
+  </view>
+  <view class="button-area">
+    <button type="default" bindtap="joinRoom"> 加入房间 </button>
+  </view>
+</view>

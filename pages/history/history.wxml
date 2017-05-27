@@ -1,0 +1,7 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <!--<block wx:for-items="{{history}}" wx:for-item="item">-->
+    <!--<text class="log-item">{{index + 1}}. 第{{item.roomId}}局，结果为{{item.result}}</text>-->
+    <text class="log-item">尚未开放，敬请期待</text>
+  <!--</block>-->
+</view>

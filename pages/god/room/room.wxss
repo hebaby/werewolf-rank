@@ -1,0 +1,87 @@
+/**index.wxss**/
+.container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+}
+
+.config-area {
+  font-size: 14px;
+  position: fixed;
+  height: 48%;
+  top: 0;
+  bottom: 50%;
+}
+.config-room {
+  font-size: 16px;
+  margin: 20rpx;
+}
+.config-mode {
+  font-size: 16px;
+  font-weight: bold;
+}
+.config-detail {
+  margin: 20rpx;
+  text-align: left;
+}
+.config-detail-item {
+  display: block;
+}
+.detail-camp {
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.detail-role {
+  line-height: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.detail-number {
+  display: inline-block;
+}
+
+.player-area {
+  margin-top: 30rpx;
+  width: 600rpx;
+  height: 50%;
+  position: fixed;
+  bottom: 10rpx;
+}
+.player-item {
+  margin-bottom: 20rpx;
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+  position: relative;
+}
+.player-index {
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.player-info {
+  width: 130rpx;
+  height: 130rpx;
+  position: absolute;
+  overflow: hidden;
+  text-align:center;
+  font-size: 14px;
+  bottom: 5rpx;
+  right: 5rpx;
+  border-radius: 10rpx;
+  background-color: lightgray;
+}
+.player-image {
+  width: 130rpx;
+  height: 130rpx;
+}
+.player-content {
+  line-height: 130rpx;
+  font-size: 12px;
+}

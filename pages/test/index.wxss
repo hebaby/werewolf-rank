@@ -1,0 +1,64 @@
+/**index.wxss**/
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 0;
+  box-sizing: border-box;
+}
+
+.button-area {
+  width: 100%;
+  height: 200rpx;
+  margin-top: 100rpx;
+  display: flex;
+  align-item: center;
+  justify-content: space-between;
+}
+
+.index-bottom {
+  text-align: center;
+  line-height: 100rpx;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 100rpx;
+  width: 300rpx;
+  margin: 50rpx;
+}
+
+.image-area {
+  width: 400rpx;
+  height: 400rpx;
+  margin-top: 150rpx;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-item {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+
+/*.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}*/

@@ -1,0 +1,47 @@
+/**index.wxss**/
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #ECECEC;
+}
+
+.section {
+  font-size: 18px;
+  width: 100%;
+  font-weight: bold;
+  background-color: white;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+.section-title {
+  font-size: 20px;
+  padding: 10rpx;
+}
+
+.config-detail {
+  margin: 20rpx;
+  text-align: left;
+}
+.config-detail-item {
+  display: block;
+}
+.detail-camp {
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.detail-role {
+  line-height: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.detail-number {
+  display: inline-block;
+}

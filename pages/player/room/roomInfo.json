@@ -1,0 +1,57 @@
+{
+    "success": true, 
+    "data": {
+        "roomId": "12345",
+        "mode": "0",
+        "config": {
+            "number": 12,
+            "roleList": [
+                {
+                    "name": "狼人阵营",
+                    "roles": [
+                        {
+                            "id": 1,
+                            "name": "狼人",
+                            "number": 3
+                        },{
+                            "id": 2,
+                            "name": "白狼王",
+                            "number": 1
+                        }
+                    ]
+                },{
+                    "name": "神民阵营",
+                    "roles": [
+                        {
+                            "id": 3,
+                            "name": "预言家",
+                            "number": 1
+                        },{
+                            "id": 4,
+                            "name": "女巫",
+                            "number": 1
+                        },{
+                            "id": 5,
+                            "name": "猎人",
+                            "number": 1
+                        },{
+                            "id": 6,
+                            "name": "守卫",
+                            "number": 1
+                        }
+                    ]
+                },{
+                    "name": "平民阵营",
+                    "roles": [
+                        {
+                            "id": 0,
+                            "name": "普通村民",
+                            "number": 4
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
