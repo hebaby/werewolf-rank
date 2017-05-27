@@ -1,4 +1,4 @@
-.rank-list {
+.rank-content {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -19,4 +19,56 @@
   padding-top: 20rpx;
   font-size: 30px;
   color: green;
+}
+
+.rank-list {
+  width: 100%;
+  border-top: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+}
+.rank-item {
+  height: 300rpx;
+  background-color: red;
+  position: relative;
+  border-bottom: 1px solid gray;
+}
+.rank-item-result {
+  width: 30%;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rank-item-score {
+  width: 70%;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rank-item-role {
+  width: 30%;
+  height: 220rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.rank-item-config {
+  width: 70%;
+  height: 220rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.role-image {
+  margin-top: 5px;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+}
+.role-name {
+  margin-top: 10rpx;
+  font-size: 14px;
 }

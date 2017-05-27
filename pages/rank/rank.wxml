@@ -1,5 +1,5 @@
 <!--logs.wxml-->
-<view class="container rank-list">
+<view class="container rank-content">
   <view class="rank-title">
     <view class="rank-title-item rank-tile-score">
       天梯积分
@@ -14,11 +14,43 @@
       </view>
     </view>
   </view>
+
   <view class="rank-list">
-    <view class="rank-item">
-      <table>
+    <view class="rank-item"  wx:for="{{historyList}}" wx:for-item="history">
+      <view class="rank-item-result">
+        <view class="result-win" wx:if="{{history.result==0}}"> 
+          胜利
+        </view>
+        <view class="result-lose" wx:if="{{history.result==1}}">
+          失败
+        </view>
+      </view>
+      <view class="rank-item-score">
+        天梯积分{{history.score}}
+      </view>
+      <view class="rank-item-role">
+        <image src="{{history.role.image}}" class="role-image"></image>
+        <view class="role-name">
+          {{history.role.name}}
+        </view>
+      </view>
+      <view class="rank-item-config">
+        <view class="config-detail-item" wx:for="{{history.config.groupedItems}}" wx:for-item="camp">
+          <view class="detail-camp">
+            <text wx:if="{{camp[0].roleCamp==0}}">平民阵营</text>
+            <text wx:if="{{camp[0].roleCamp==1}}">神民阵营</text>
+            <text wx:if="{{camp[0].roleCamp==2}}">狼人阵营</text>
+          </view>
+          <view class="detail-role" wx:for="{{camp}}" wx:for-item="role">
+              {{role.roleName}}
+            <view class="detail-number" wx:if="{{role.amount>1}}">*{{role.amount}}</view> 
+          </view>
+        </view>
+      </view>
+
+      <!--<table>
         <tr>
-          <td>
+          <td >
            <view class="rank-item-result">
             <view class="result-win">
               胜利
@@ -64,7 +96,7 @@
             </view>
           </td>
         </tr>
-      </table>
+      </table>-->
     </view>
   </view>
 
