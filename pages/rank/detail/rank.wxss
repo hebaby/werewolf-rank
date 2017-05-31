@@ -1,0 +1,165 @@
+.rank-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0rpx;
+}
+.rank-detail {
+  text-align: center;
+  margin-top: 50rpx;
+}
+.rank-item {
+  height: 300rpx;
+  position: relative;
+  border-bottom: 1px solid gray;
+}
+.result-win{
+  color: green;
+}
+.result-lose{
+  color: red;
+}
+.rank-item-result {
+  width: 30%;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  font-size: 18px;
+  top: 0;
+  left: 0;
+}
+.rank-item-score {
+  width: 70%;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rank-item-role {
+  width: 30%;
+  height: 220rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.rank-item-config {
+  width: 70%;
+  height: 220rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 200rpx;  
+}
+.role-image {
+  margin-top: 5px;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+}
+.role-name {
+  margin-top: 10rpx;
+  font-size: 14px;
+}
+.config-detail-item {
+  margin: 10rpx;
+  display: block;
+}
+.detail-camp {
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+  font-weight: bold;
+}
+.detail-role {
+  line-height: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.detail-number {
+  display: inline-block;
+}
+
+
+
+/*整体结构*/
+.detail-left {
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+.detail-right {
+  width: 20%;
+  float: right;
+  text-align: center;
+}
+.detail-content {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/*玩家头像部分*/
+.player-item {
+  margin-bottom: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  display: inline-block;
+  position: relative;
+}
+.high-light-true{
+  background-color: rgba(0,0,255,.5);
+}
+.player-index {
+  font-size: 12px;
+  line-height: 17px;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  color: white;
+  border-radius: 7px;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.player-info {
+  width: 110rpx;
+  height: 110rpx;
+  position: absolute;
+  overflow: hidden;
+  text-align:center;
+  font-size: 14px;
+  bottom: 5rpx;
+  right: 5rpx;
+  border-radius: 10rpx;
+  background-color: lightgray;
+}
+.player-image {
+  width: 110rpx;
+  height: 110rpx;
+}
+.text-role {
+  z-index: 5;
+  font-size: 13px;
+  position: absolute;
+  bottom: 5rpx;
+  right: 5rpx;
+  font-weight: bold;
+  color: red;
+}
+
+/*夜晚信息部分*/
+.detail-content-item {
+  margin-bottom: 80rpx;
+}
+.detial-content-title{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20rpx;
+}
+.detail-content-action{
+  font-size: 12px;
+  margin: 10px;
+}

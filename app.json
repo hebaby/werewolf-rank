@@ -1,7 +1,9 @@
 {
   "pages":[
-    "pages/rank/rank",
-    "pages/index/index",
+                "pages/rank/list/rank",
+    "pages/rank/detail/rank",
+            "pages/index/index",
+
     "pages/god/game/day/day",
     "pages/god/game/night/night",
     "pages/god/room/room",
@@ -24,7 +26,7 @@
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [{
-      "pagePath": "pages/rank/rank",
+      "pagePath": "pages/rank/list/rank",
       "iconPath": "image/config.png",
       "selectedIconPath": "image/config.png",
       "text": "天梯"

@@ -16,7 +16,7 @@
   </view>
 
   <view class="rank-list">
-    <view class="rank-item"  wx:for="{{historyList}}" wx:for-item="history">
+    <view class="rank-item"  wx:for="{{historyList}}" wx:for-item="history" data-index="{{history.id}}" bindtap="checkDetail">
       <view class="rank-item-result">
         <view class="result-win" wx:if="{{history.result==0}}"> 
           胜利

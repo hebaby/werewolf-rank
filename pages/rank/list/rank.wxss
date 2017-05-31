@@ -28,15 +28,21 @@
 }
 .rank-item {
   height: 300rpx;
-  background-color: red;
   position: relative;
   border-bottom: 1px solid gray;
+}
+.result-win{
+  color: green;
+}
+.result-lose{
+  color: red;
 }
 .rank-item-result {
   width: 30%;
   height: 80rpx;
   line-height: 80rpx;
   position: absolute;
+  font-size: 18px;
   top: 0;
   left: 0;
 }
@@ -61,6 +67,9 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 200rpx;  
 }
 .role-image {
   margin-top: 5px;
@@ -71,4 +80,22 @@
 .role-name {
   margin-top: 10rpx;
   font-size: 14px;
+}
+.config-detail-item {
+  margin: 10rpx;
+  display: block;
+}
+.detail-camp {
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+  font-weight: bold;
+}
+.detail-role {
+  line-height: 16px;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.detail-number {
+  display: inline-block;
 }
