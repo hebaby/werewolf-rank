@@ -27,18 +27,18 @@
     "backgroundColor": "#ffffff",
     "list": [{
       "pagePath": "pages/rank/list/rank",
-      "iconPath": "image/config.png",
-      "selectedIconPath": "image/config.png",
+      "iconPath": "image/tab/rank.png",
+      "selectedIconPath": "image/tab/rank-check.png",
       "text": "天梯"
     }, {
       "pagePath": "pages/index/index",
-      "iconPath": "image/game.png",
-      "selectedIconPath": "image/game.png",
+      "iconPath": "image/tab/game.png",
+      "selectedIconPath": "image/tab/game-check.png",
       "text": "游戏"
     }, {
       "pagePath": "pages/history/history",
-      "iconPath": "image/contact.png",
-      "selectedIconPath": "image/game.png",
+      "iconPath": "image/tab/mine.png",
+      "selectedIconPath": "image/tab/mine-check.png",
       "text": "我的"
     }]
   }
