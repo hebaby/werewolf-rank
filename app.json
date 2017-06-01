@@ -1,9 +1,9 @@
 {
   "pages":[
-                "pages/rank/list/rank",
+        "pages/god/game/night/night",
+    "pages/index/index",
     "pages/rank/detail/rank",
-            "pages/index/index",
-
+    "pages/rank/list/rank",
     "pages/god/game/day/day",
     "pages/god/game/night/night",
     "pages/god/room/room",
@@ -16,7 +16,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "狼人天梯榜",
+    "navigationBarTitleText": "狼人天梯助手",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": false
   },

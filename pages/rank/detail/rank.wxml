@@ -2,20 +2,23 @@
 <view class="rank-content">
   <view class="rank-item">
     <view class="rank-item-result">
-      <view class="result-win" wx:if="{{history.result==0}}"> 
-        胜利
+      <view class="result-win" wx:if="{{history.result==1||history.result==2}}"> 
+        {{gameResultDict[history.result]}}
       </view>
-      <view class="result-lose" wx:if="{{history.result==1}}">
-        失败
+      <view class="result-lose" wx:if="{{history.result==3||history.result==4}}">
+        {{gameResultDict[history.result]}}
+      </view>
+      <view class="result-lose" wx:if="{{!history.result}}">
+        无结果
       </view>
     </view>
     <view class="rank-item-score">
       天梯积分{{history.score}}
     </view>
     <view class="rank-item-role">
-      <image src="{{history.role.image}}" class="role-image"></image>
+      <image src="{{history.roleAvatar==''?defaultSrc:history.roleAvatar}}" class="role-image"></image>
       <view class="role-name">
-        {{history.role.name}}
+        {{history.roleName}}
       </view>
     </view>
     <view class="rank-item-config">
@@ -61,10 +64,15 @@
           【第{{round.day}}天{{round.night?'夜晚':'白天'}}】
         </view> 
         <view class="detail-content-action" wx:for="{{round.events}}" wx:for-item="event">
-          {{roleDict[event.actionType]}}
-          <text wx:if="{{event.actionType!=10}}">：{{event.targetNumber==-1? '没有操作':event.targetNumber}}</text>
+          {{event}}
         </view>
       </view>
+      <view class="detail-content-title" wx:if="{{detail.length>0}}">
+          【游戏结束】
+      </view> 
+      <view class="detail-content-title" wx:if="{{detail.length==0}}">
+          【无游戏记录】
+      </view> 
     </view>
   </view>
 </view>

@@ -4,7 +4,8 @@ var app = getApp()
 Page({
   data: {
     roomId: 0,
-    passwd: ''
+    passwd: '',
+    isLoading: false
   },
   //事件处理函数
   bindKeyInput: function(e) {
@@ -13,8 +14,12 @@ Page({
     })
   },
   joinRoom: function() {
+    let that = this;
     if(this.data.roomId>0){
       var roomId = this.data.roomId;
+      this.setData({
+        isLoading: true
+      })
       wx.request({
         url: app.globalData.BASE_URL+'/api/game/'+roomId+'.json',
         data: {
@@ -24,14 +29,17 @@ Page({
             'content-type': 'application/json'
         },
         success: function(res) {
+          that.setData({
+            isLoading: false
+          })
           if(res.data && res.data.success) {
+            wx.navigateTo({
+              url: '../room/room?roomId='+roomId
+            })
             wx.showToast({
               title: '加入房间成功！',
               icon: 'success',
               duration: 2000
-            })
-            wx.navigateTo({
-              url: '../room/room?roomId='+roomId
             })
           }else{
             wx.showToast(
@@ -61,13 +69,5 @@ Page({
   onLoad: function () {
     console.log('onLoad')
     var that = this
-  	//调用应用实例的方法获取全局数据
-    // app.getUserInfo(function(userInfo){
-    //   //更新数据
-    //   that.setData({
-    //     userInfo:userInfo
-    //   })
-    //   that.update()
-    // })
   }
 })

@@ -21,7 +21,7 @@
         </view>
       </view>
     </view>
-    <button type="default" bindtap="startGame" size="mini"> 开始游戏 </button>
+    <button type="default" bindtap="startGame" size="mini" disabled="{{isLoading}}"> 开始游戏 </button>
   </view>
   <scroll-view class="player-area" scroll-y="true">
     <view class="player-item" wx:for="{{playList}}" wx:for-item="play" wx:for-index="index" bindtap="joinRoom" data-index="{{index}}">

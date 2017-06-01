@@ -10,7 +10,8 @@ Page({
     configData: null,
     roleList: [],
     playList: [],
-    timeoutInfo: null
+    timeoutInfo: null,
+    isLoading: false
   },
   //事件处理函数
   joinRoom: function(e) {
@@ -19,9 +20,11 @@ Page({
     let seatId = index+1;
     let userId = app.globalData.userInfo.id;
     let roomId = this.data.roomId;
+    this.setData({
+      isLoading: true
+    })
     if(this.data.playList[index].userId==0) {
       wx.request({
-        // url: 'http://localhost:8888/pages/god/room/join.json',
         url: app.globalData.BASE_URL+'/api/game/'+roomId+'/join.json',
         method: 'POST',
         data: {
@@ -32,6 +35,9 @@ Page({
           'content-type': 'application/x-www-form-urlencoded'
         },
         success: function(res) {
+          that.setData({
+            isLoading: false
+          });
           if(res.data && res.data.success) {
             that.setData({
               playList: res.data.data,

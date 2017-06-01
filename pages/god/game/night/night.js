@@ -9,37 +9,12 @@ Page({
     infoContent: '',
     infoTips: '',
     orderList: [],
-    orderIndexList: [{
-      title: '狼人请睁眼' ,
-      content: '请点击狼人今晚要击杀的玩家头像',
-      tips: '狼人要击杀的目标是:',
-      actionId: 0
-    },{
-      title: '预言家请睁眼' ,
-      content: '请点击预言家晚上要验的玩家头像',
-      tips: '预言家验的目标是:',
-      actionId: 1
-    },{
-      title: '守卫请睁眼' ,
-      content: '请选择要守卫的玩家头像',
-      tips: '守卫守护的目标是:',
-      actionId: 2
-    },{
-      title: '女巫请睁眼' ,
-      content: '请点击女巫要救的玩家头像',
-      tips: '女巫救的目标是:',
-      actionId: 3
-    },{
-      title: '女巫请睁眼' ,
-      content: '请点击女巫要毒的玩家头像',
-      tips: '女巫毒的目标是:',
-      actionId: 4
-    }],
     actionList: [],
+    actionMap: [],
     selectIndex: -1,
     roundIndex: 0
   },
-  
+
   //上一步
   backButton: function() {
     var roundIndex = this.data.roundIndex;
@@ -66,14 +41,17 @@ Page({
   nextButton: function() {
     var that = this;
     var actionList = this.data.actionList;
+    var actionMap = this.data.actionMap;
     if(this.data.selectIndex>-1){
       actionList.push({
         actionType: this.data.orderList[this.data.roundIndex].id,
         targetNumber: this.data.selectIndex+1
       })
+      actionMap.push(this.data.orderList[this.data.roundIndex].name);
     }
     this.setData({
       actionList: actionList,
+      actionMap: actionMap,
       roundIndex: this.data.roundIndex+1,
       selectIndex: -1
     })
@@ -111,9 +89,8 @@ Page({
                 showCancel: false,
                 confirmText: '回到主页',
                 success: function(res) {
-                  wx.redirectTo({
-                    url: '../../../index/index'
-                    // url: '../day/day?roomId='+that.data.roomId
+                  wx.navigateBack({
+                    delta: 5
                   })
                 }
 
@@ -178,6 +155,7 @@ Page({
   //获取夜晚可执行的操作
   getNightConfig: function() {
     var that = this;
+    var orderIndexList = app.globalData.actionDict;
     wx.request({
         url: app.globalData.BASE_URL+'/api/game/'+that.data.roomId+'/actions.json',
         data: {
@@ -191,9 +169,9 @@ Page({
           if(res.data && res.data.success) {
             let tempList = res.data.data;                                                                                                     
             tempList.map(function(item){
-              item.name = that.data.orderIndexList[item.id].title;
-              item.tips = that.data.orderIndexList[item.id].tips;
-              item.confirm = that.data.orderIndexList[item.id].content;
+              item.name = orderIndexList[item.id].title;
+              item.tips = orderIndexList[item.id].tips;
+              item.confirm = orderIndexList[item.id].content;
             })
             that.setData({
               orderList: tempList
@@ -231,7 +209,8 @@ Page({
   onLoad: function (option) {
     var that = this;
     this.setData({
-      roomId: option.roomId,
+      roomId: 70
+      // roomId: option.roomId,
     })
     this.getNightConfig();
     this.getPlayerConfig();

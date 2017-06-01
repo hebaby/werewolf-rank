@@ -72,7 +72,6 @@ Page({
   getBasicConfig: function() {
     var that = this;
     wx.request({
-        // url: 'http://localhost:8888/pages/player/room/roomInfo.json',
         url: app.globalData.BASE_URL+'/api/game/'+that.data.roomId+'.json',
         data: {
           roomId :  this.data.roomId,

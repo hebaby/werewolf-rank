@@ -7,7 +7,8 @@ Page({
     numberList: ['8','9','10','11','12','13','14'],
     configList: [],
     index: 4,
-    mode: 1
+    mode: 1,
+    isLoading: false
   },
   //事件处理函数
   radioChange: function() {
@@ -22,7 +23,6 @@ Page({
       index: index
     });
     wx.request({
-      // url: 'http://localhost:8888/pages/god/config/config'+that.data.number+'.json',
       url: app.globalData.BASE_URL+'/api/gameConfigs.json',
       data: {
         members	 :  that.data.number
@@ -44,6 +44,9 @@ Page({
     var index = e.currentTarget.dataset.index;
     var configId = this.data.configList[index].id;
     var judgeId = app.globalData.userInfo.id;
+    this.setData({
+      isLoading: true
+    })
     wx.request({
       url: app.globalData.BASE_URL+'/api/game.json',
       method: 'POST',
@@ -55,6 +58,9 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
+        that.setData({
+          isLoading: false
+        })
         if(res.data && res.data.success) {
           var roomId = res.data.data.id;
           wx.navigateTo({

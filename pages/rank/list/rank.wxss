@@ -20,6 +20,11 @@
   font-size: 30px;
   color: green;
 }
+.rank-title-number-default {
+  padding-top: 25rpx;
+  font-size: 20px;
+  color: red;
+}
 
 .rank-list {
   width: 100%;
@@ -42,7 +47,8 @@
   height: 80rpx;
   line-height: 80rpx;
   position: absolute;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: bold;
   top: 0;
   left: 0;
 }
@@ -80,6 +86,7 @@
 .role-name {
   margin-top: 10rpx;
   font-size: 14px;
+  color: blue;
 }
 .config-detail-item {
   margin: 10rpx;

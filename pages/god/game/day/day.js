@@ -53,8 +53,8 @@ Page({
                 showCancel: false,
                 confirmText: '回到主页',
                 success: function(res) {
-                  wx.redirectTo({
-                    url: '../../../index/index'
+                  wx.navigateBack({
+                    delta: 5
                   })
                 }
 

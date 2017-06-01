@@ -4,34 +4,40 @@
     <view class="rank-title-item rank-tile-score">
       天梯积分
       <view class="rank-title-number">
-        156
+        {{userInfo.userScore}}
       </view>
     </view>
     <view class="rank-title-item rank-tile-rank">
       天梯排名
-      <view class="rank-title-number">
-        38
+      <view class="rank-title-number" wx:if="{{userInfo.userRank!=0}}">
+        {{userInfo.rank}}
+      </view>
+      <view class="rank-title-number-default" wx:if="{{userInfo.userRank==0}}">
+        未上榜
       </view>
     </view>
   </view>
 
   <view class="rank-list">
-    <view class="rank-item"  wx:for="{{historyList}}" wx:for-item="history" data-index="{{history.id}}" bindtap="checkDetail">
+    <view class="rank-item"  wx:for="{{historyList}}" wx:for-item="history" data-index="{{history.gameId}}" bindtap="checkDetail">
       <view class="rank-item-result">
-        <view class="result-win" wx:if="{{history.result==0}}"> 
-          胜利
+        <view class="result-win" wx:if="{{history.result==1||history.result==2}}"> 
+          {{gameResultDict[history.result]}}
         </view>
-        <view class="result-lose" wx:if="{{history.result==1}}">
-          失败
+        <view class="result-lose" wx:if="{{history.result==3||history.result==4}}">
+          {{gameResultDict[history.result]}}
+        </view>
+        <view class="result-lose" wx:if="{{!history.result}}">
+          无结果
         </view>
       </view>
       <view class="rank-item-score">
         天梯积分{{history.score}}
       </view>
       <view class="rank-item-role">
-        <image src="{{history.role.image}}" class="role-image"></image>
+        <image src="{{history.roleAvatar==''?defaultSrc:history.roleAvatar}}" class="role-image"></image>
         <view class="role-name">
-          {{history.role.name}}
+          {{history.roleName}}
         </view>
       </view>
       <view class="rank-item-config">
@@ -47,61 +53,6 @@
           </view>
         </view>
       </view>
-
-      <!--<table>
-        <tr>
-          <td >
-           <view class="rank-item-result">
-            <view class="result-win">
-              胜利
-            </view>
-            <view class="result-lose">
-              失败
-            </view>
-           </view>
-          </td>
-          <td>
-            <view class="rank-item-score">
-              天梯积分+3
-            </view>
-          </td>
-          <td colspan="2">
-            lalala
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <view class="rank-item-role">
-              <view class="role-image">
-                <image src=""></image>
-              </view>
-              <view class="role-name">
-                狼人
-              </view>
-            </view>
-          </td>
-          <td>
-            <view class="rank-item-config">
-              <view class="config-detail-item" wx:for="{{configData.groupedItems}}" wx:for-item="camp">
-                <view class="detail-camp">
-                  <text wx:if="{{camp[0].roleCamp==0}}">平民阵营</text>
-                  <text wx:if="{{camp[0].roleCamp==1}}">神民阵营</text>
-                  <text wx:if="{{camp[0].roleCamp==2}}">狼人阵营</text>
-                </view>
-                <view class="detail-role" wx:for="{{camp}}" wx:for-item="role">
-                    {{role.roleName}}
-                  <view class="detail-number" wx:if="{{role.amount>1}}">*{{role.amount}}</view> 
-                </view>
-              </view>
-            </view>
-          </td>
-        </tr>
-      </table>-->
     </view>
   </view>
-
-  <!--<block wx:for-items="{{rank}}" wx:for-item="item">-->
-    <!--<text class="log-item">第{{index + 1}}名： {{item.userName}}（{{item.userId}}）</text>-->
-    <!--<text class="log-item">尚未开放，敬请期待</text>-->
-  <!--</block>-->
 </view>
