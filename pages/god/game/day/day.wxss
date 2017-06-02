@@ -37,9 +37,17 @@
   display: inline-block;
   margin-right: 30rpx;
 }
+.info-actions{
+  width: 100%;
+  bottom: 30%;
+  position: absolute;
+}
 .info-button{
   position: absolute;
   bottom: 5rpx;
+}
+.info-button-style {
+  margin-right: 30rpx;
 }
 
 .player-area {

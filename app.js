@@ -70,6 +70,11 @@ App({
     that.globalData.dayIndex++;
   },
 
+  initDay: function(){
+    var that = this;
+    that.globalData.dayIndex = 0;
+  },
+
   globalData:{
     userInfo:null,
     roleDict: {
@@ -93,27 +98,27 @@ App({
       '4':'游戏中断'
     },
     actionDict: [{
-      title: '狼人请睁眼' ,
+      title: '狼人' ,
       content: '请点击狼人今晚要击杀的玩家头像',
       tips: '狼人要击杀的目标是:',
       actionId: 0
     },{
-      title: '预言家请睁眼' ,
+      title: '预言家' ,
       content: '请点击预言家晚上要验的玩家头像',
       tips: '预言家验的目标是:',
       actionId: 1
     },{
-      title: '守卫请睁眼' ,
+      title: '守卫' ,
       content: '请选择要守卫的玩家头像',
       tips: '守卫守护的目标是:',
       actionId: 2
     },{
-      title: '女巫请睁眼' ,
+      title: '救人' ,
       content: '请点击女巫要救的玩家头像',
       tips: '女巫救的目标是:',
       actionId: 3
     },{
-      title: '女巫请睁眼' ,
+      title: '毒人' ,
       content: '请点击女巫要毒的玩家头像',
       tips: '女巫毒的目标是:',
       actionId: 4

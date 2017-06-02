@@ -19,6 +19,7 @@ Page({
   backButton: function() {
     var roundIndex = this.data.roundIndex;
     var actionList = this.data.actionList;
+    var actionMap = this.data.actionMap;
     if(this.data.roundIndex==0){
       wx.showToast(
       {
@@ -29,9 +30,11 @@ Page({
     }else{
       // 初始化相关操作
       actionList.pop();
+      actionMap.pop();
       this.setData({
         roundIndex: roundIndex-1,
         actionList: actionList,
+        actionMap: actionMap,
         selectIndex: -1
       })
       this.updateTips();
@@ -63,7 +66,9 @@ Page({
         success: function(res) {
           if(res.data && res.data.success) {
             if(res.data.data.gameResult==0){
+              console.log(app.globalData.dayIndex);
               app.nextDay();
+              console.log(app.globalData.dayIndex);
               wx.redirectTo({
                 url: '../day/day?roomId='+that.data.roomId
               })
@@ -103,6 +108,10 @@ Page({
                 icon: 'loading',
                 duration: 2000
               })
+            this.setData({
+              actionList: this.data.actionList.pop(),
+              actionMap: this.data.actionMap.pop()
+            })
           }
         }
       })
@@ -209,8 +218,7 @@ Page({
   onLoad: function (option) {
     var that = this;
     this.setData({
-      roomId: 70
-      // roomId: option.roomId,
+      roomId: option.roomId
     })
     this.getNightConfig();
     this.getPlayerConfig();

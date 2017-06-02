@@ -9,6 +9,7 @@ Page({
     infoCount: '',
     infoContent: [],
     actionList: [],
+    actionMap: [],
     actionSheetItems: [],
     actionDefault: [
       {bindtap: 'police', text: '当选警长'},
@@ -16,6 +17,14 @@ Page({
     ],
     actionSheetHidden: true,
     selectIndex: -1,
+  },
+
+  //重置操作
+  resetAction: function() {
+    this.setData({
+      actionMap:[],
+      actionList: []
+    })
   },
 
   //进入黑夜
@@ -32,6 +41,7 @@ Page({
                 url: '../night/night?roomId='+that.data.roomId
               })
             }else{
+              console.log(res.data.data.gameResult);
               let tipMsg = '';
               let code = res.data.data.gameResult||4;
               switch(code) {
@@ -47,23 +57,20 @@ Page({
                 default:
                   tipMsg = '游戏被中止！';
               }
+              console.log(tipMsg);
               wx.showModal({
                 title: '游戏结束',
                 content: tipMsg,
                 showCancel: false,
                 confirmText: '回到主页',
                 success: function(res) {
+                  console.log("i'm here");
                   wx.navigateBack({
                     delta: 5
                   })
                 }
-
               })
             }
-          
-          wx.redirectTo({
-            url: '../night/night?roomId='+that.data.roomId
-          })
         }else{
           wx.showToast(
             {
@@ -79,36 +86,45 @@ Page({
   //当选警长操作
   bindpolice: function() {
     let actionList = this.data.actionList;
+    let actionMap = this.data.actionMap;
     actionList.push({
       actionType: 9,
       targetNumber: this.data.selectIndex+1
     })
+    actionMap.push('警长');
     this.setData({
-      actionList: actionList
+      actionList: actionList,
+      actionMap: actionMap
     })
     this.actionSheetbindchange();
   },
   //公投出局操作
   bindbanish: function() {
     let actionList = this.data.actionList;
+    let actionMap = this.data.actionMap;
     actionList.push({
       actionType: 8,
       targetNumber: this.data.selectIndex+1
     })
+    actionMap.push('公投');
     this.setData({
-      actionList: actionList
+      actionList: actionList,
+      actionMap: actionMap
     })
     this.actionSheetbindchange();
   },
   //自曝操作
   bindfire: function() {
     let actionList = this.data.actionList;
+    let actionMap = this.data.actionMap;
     actionList.push({
       actionType: 7,
       targetNumber: this.data.selectIndex+1
     })
+    actionMap.push('自曝');
     this.setData({
-      actionList: actionList
+      actionList: actionList,
+      actionMap: actionMap
     })
     this.actionSheetbindchange();
   },
@@ -154,6 +170,8 @@ Page({
           if(res.data && res.data.success) {
             let playList = res.data.data;
             let infoContent = [];
+            console.log(playList);
+            console.log(that.data.dayIndex);
             playList.forEach((item)=>{
               if(item.dead && item.deadNight && item.deadDay == that.data.dayIndex-1) {
                 infoContent.push(item);

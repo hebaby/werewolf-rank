@@ -12,9 +12,8 @@
       <text wx:if="{{selectIndex!=-1}}">{{playList[selectIndex].number}}号{{playList[selectIndex].userName}}</text>
     </view>
 
-    <view class="info-tips">
-      已进行的操作:
-      <text></text>
+    <view class="info-actions" wx:if="{{actionMap.length>0}}">
+      已进行的操作:{{actionMap}}
     </view>
   
     <view class="info-button">

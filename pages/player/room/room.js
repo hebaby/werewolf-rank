@@ -9,8 +9,20 @@ Page({
     role: null,
     roleList: [],
     playList: [],
+    roleName: '',
     timeoutInfo: null
   },
+
+ //查看身份
+ checkRole: function() {
+    wx.showModal({
+      title: '查看身份',
+      content: '你的身份信息是：'+this.data.roleName,
+      showCancel: false,
+      confirmText: "知道了",
+    })
+ },
+ 
  //事件处理函数
  joinRoom: function(e) {
     var that = this;
@@ -33,7 +45,8 @@ Page({
           if(res.data && res.data.success) {
             that.setData({
               playList: res.data.data,
-              role: res.data.data[index]
+              role: res.data.data[index],
+              roleName: res.data.data[index].roleName
             })
              wx.showModal({
               title: '加入成功',
@@ -113,7 +126,8 @@ Page({
   onLoad: function (option) {
     var that = this;
     this.setData({
-      roomId: option.roomId
+      roomId: 94
+      // roomId: option.roomId
     });
     this.getBasicConfig();
     this.getPlayerConfig();

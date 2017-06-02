@@ -15,7 +15,12 @@
       </view>
     </view>
     <view class="info-tips">（请组织场上玩家轮流发言）</view>
+
+    <view class="info-actions" wx:if="{{actionMap.length>0}}">
+      已进行的操作:{{actionMap}}
+    </view>
     <view class="info-button">
+      <button type="default" size="mini" bindtap="resetAction" class="info-button-style">重置操作</button>
       <button type="default" size="mini" bindtap="enterNight">进入黑夜</button>
     </view>
   </view>

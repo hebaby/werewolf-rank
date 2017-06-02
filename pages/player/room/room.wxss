@@ -45,7 +45,9 @@
 .player-area {
   margin-top: 30rpx;
   width: 600rpx;
-  height: 600rpx;
+  height: 50%;
+  position: fixed;
+  bottom: 10rpx;
 }
 .player-item {
   margin-bottom: 20rpx;

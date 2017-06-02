@@ -98,6 +98,7 @@
 .detail-content {
   width: 60%;
   margin: 0 auto;
+  padding-bottom: 100rpx;
 }
 
 /*玩家头像部分*/

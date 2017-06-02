@@ -91,6 +91,7 @@ Page({
       },
       success: function(res) {
         if(res.data && res.data.success) {
+          app.initDay();
           wx.navigateTo({
             url: '../game/night/night?roomId='+roomId
           })

@@ -1,6 +1,5 @@
 {
   "pages":[
-        "pages/god/game/night/night",
     "pages/index/index",
     "pages/rank/detail/rank",
     "pages/rank/list/rank",

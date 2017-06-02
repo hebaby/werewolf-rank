@@ -36,6 +36,12 @@
 .info-button-style {
   margin-right: 30rpx;
 }
+
+.info-actions{
+  width: 100%;
+  bottom: 30%;
+  position: absolute;
+}
 .info-button {
   width: 100%;
   bottom: 10%;

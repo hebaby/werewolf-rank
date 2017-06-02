@@ -21,6 +21,7 @@
         </view>
       </view>
     </view>
+    <button type="default" bindtap="checkRole" size="mini" disabled="{{roleName==''}}"> 查看身份 </button>
   </view>
   <view class="player-area">
     <view class="player-item" wx:for="{{playList}}" wx:for-item="play" wx:for-index="index" bindtap="joinRoom" data-index="{{index}}">
