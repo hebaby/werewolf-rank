@@ -34,6 +34,10 @@
         </view>
       </view>
     </view>
+    <view class="rank-item-info">
+          <text class="rank-item-room">房间号：{{history.gameId}}  </text>
+          <text class="rank-item-time">{{history.created}}</text>
+    </view>
   </view>
   <view class="rank-detail">
     <view class="detail-left">

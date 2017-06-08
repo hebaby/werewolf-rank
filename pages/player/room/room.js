@@ -126,8 +126,7 @@ Page({
   onLoad: function (option) {
     var that = this;
     this.setData({
-      roomId: 94
-      // roomId: option.roomId
+      roomId: option.roomId
     });
     this.getBasicConfig();
     this.getPlayerConfig();

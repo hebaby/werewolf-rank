@@ -8,8 +8,13 @@ Page({
     configList: [],
     index: 4,
     mode: 1,
-    isLoading: false
+    isLoading: false,
+    showModalStatus: false 
   },
+
+
+
+
   //事件处理函数
   radioChange: function() {
     //TODO
@@ -39,6 +44,7 @@ Page({
       }
     })
   },
+  //加入房间
   joinRoom: function(e) {
     var that = this;
     var index = e.currentTarget.dataset.index;
@@ -74,6 +80,14 @@ Page({
     })
 
   },
+
+  //进入已有房间
+  // openModal: function(e) {
+  //   this.setData({
+  //     showModalStatus: true
+  //   })
+  // },
+  
   onShow: function () {
     var that = this;
   

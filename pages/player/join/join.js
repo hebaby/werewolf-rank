@@ -15,6 +15,7 @@ Page({
   },
   joinRoom: function() {
     let that = this;
+    let userId = app.globalData.userInfo.id;
     if(this.data.roomId>0){
       var roomId = this.data.roomId;
       this.setData({
@@ -33,9 +34,24 @@ Page({
             isLoading: false
           })
           if(res.data && res.data.success) {
-            wx.navigateTo({
-              url: '../room/room?roomId='+roomId
-            })
+            if(res.data.data.judgeId == userId){
+              //法官判断逻辑
+              app.setDay(res.data.data.day);
+              if(res.data.data.night){
+                wx.navigateTo({
+                  url: '../../god/game/night/night?roomId='+roomId
+                })
+              }else{
+                wx.navigateTo({
+                  url: '../../god/game/day/day?roomId='+roomId
+                })
+              }
+            }else{
+              //玩家判断逻辑
+              wx.navigateTo({
+                url: '../room/room?roomId='+roomId
+              })
+            }
             wx.showToast({
               title: '加入房间成功！',
               icon: 'success',

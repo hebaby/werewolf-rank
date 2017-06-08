@@ -9,6 +9,10 @@ Page({
       userRank: 38
     },
     gameResultDict: null,
+    refreshLock: false,
+    pullDownLock: false,
+    historyIndex: 0,
+    pullDownFlag: false,
     historyList: []
   },
   checkDetail: function(event) {
@@ -17,6 +21,80 @@ Page({
         url: '../detail/rank?gameId='+itemIndex
     })
   },  
+
+  loadMore: function() {
+    if(!this.data.pullDownLock){
+        var that = this;
+        var historyIndex = this.data.historyIndex;
+        let userId = app.globalData.userInfo.id;
+        this.setData({
+            pullDownLock: true
+        });
+        wx.showToast(
+        {
+            title: '记录加载中',
+            icon: 'loading',
+            duration: 1000
+        })
+        wx.request({
+            url: app.globalData.BASE_URL+'/api/user/'+userId+'/records.json',
+            header: {
+                'content-type': 'application/json'
+            },
+            data: {
+                page: historyIndex+1
+            },
+            success: function(res) {
+                if(res.data && res.data.success) {
+                    var historyList = that.data.historyList;
+                    res.data.data.forEach((item)=>{
+                        historyList.push(item);
+                    })
+                    console.log(historyList);
+                    that.setData({
+                        historyList: historyList,
+                        historyIndex: that.data.historyIndex+1
+                    })
+                }else{
+                    wx.showToast(
+                    {
+                        title: '获取列表失败',
+                        icon: 'loading',
+                        duration: 2000
+                    })
+                }
+            }
+        })
+        setTimeout(function(){
+            that.setData({
+                pullDownLock: false
+            });
+        },1000);
+        console.log('loadMore');
+    }
+  },
+  refresh: function() {
+    var that = this;
+    if(!this.data.refreshLock){
+        this.setData({
+            refreshLock: true
+        });
+        this.getHistoryList();
+        setTimeout(function(){
+            that.setData({
+                refreshLock: false
+            });
+        },1000);
+        console.log('refresh');
+    }
+  },
+
+  // 进入天梯排名
+  enterRank: function() {
+      wx.navigateTo({
+          url: '../rank/rank'
+      })
+  },
 
   // 拿到历史数据
   getHistoryList: function(){

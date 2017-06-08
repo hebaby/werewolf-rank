@@ -73,6 +73,9 @@ Page({
         icon: 'loading',
         duration: 2000
       })
+      that.setData({
+        isLoading: false
+      });
     }
   },
 

@@ -17,6 +17,49 @@ Page({
     ],
     actionSheetHidden: true,
     selectIndex: -1,
+    // showModalStatus: false,
+    modalFlag: true,
+    confirmTips: '请输入要带走的人',
+    inputValue: null,
+    tempAction: 0
+  },
+
+  bindKeyInput: function(e) {
+     this.setData({
+      inputValue: e.detail.value
+    })
+  },
+
+  modalOk: function(e) {
+    let value = this.data.inputValue;
+    if(/^\d+$/.test(value)){
+      let actionList = this.data.actionList;
+      let actionMap = this.data.actionMap;
+      actionList.push({
+        actionType: this.data.tempAction,
+        targetNumber: value
+      })
+      actionMap.push(app.globalData.actionDict[this.data.tempAction].title);
+      this.setData({
+        actionList: actionList,
+        actionMap: actionMap,
+        modalFlag: !this.data.modalFlag
+      })
+    }else{
+      wx.showToast(
+      {
+        title: "请输入有效数字",
+        icon: 'loading',
+        duration: 2000
+      })
+    }
+  },
+
+  modalCancel: function(e) {
+    console.log("cancel");
+    this.setData({
+      modalFlag: !this.data.modalFlag
+    })
   },
 
   //重置操作
@@ -83,6 +126,63 @@ Page({
     })
   },
 
+  //白狼王操作
+  bindexpose: function() {
+    this.actionSheetbindchange();
+    this.setData({
+      tempAction: 6,
+      modalFlag: !this.data.modalFlag
+    })
+  },
+
+  //猎人操作
+  bindgun: function() {
+    this.actionSheetbindchange();
+    this.setData({
+      tempAction: 5,
+      modalFlag: !this.data.modalFlag
+    })
+  },
+
+  //移交法官操作
+  bindappoint: function() {
+    let judgeId = this.data.playList[this.data.selectIndex].userId;
+    let that = this;
+    wx.request({
+        url: app.globalData.BASE_URL+'/api/game/'+that.data.roomId+'/appointJudge.json',
+        method: 'POST',
+        data: {
+          id :  that.data.roomId,
+          judgeId: parseFloat(judgeId,10)
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function(res) {
+          if(res.data && res.data.success) {
+            wx.showModal({
+              title: '移交法官成功',
+              content: '您已经法官移交给【'+res.data.data.judgeName+'】,感谢您的记录。',
+              showCancel: false,
+              confirmText: '回到主页',
+              success: function(res) {
+                wx.navigateBack({
+                  delta: 5
+                })
+              }
+            })
+          }else{
+            wx.showToast(
+            {
+              title: res.data.error.message,
+              icon: 'loading',
+              duration: 2000
+            })
+          }
+        }
+      })   
+    this.actionSheetbindchange();
+  },
   //当选警长操作
   bindpolice: function() {
     let actionList = this.data.actionList;
@@ -146,6 +246,24 @@ Page({
       actionList.push({
         bindtap: 'fire',
         text: '狼人自曝'
+      })
+    }
+    if(this.data.playList[index].roleId ==2){
+      actionList.push({
+        bindtap: 'expose',
+        text: '白狼王自曝'
+      })
+    }
+    if(this.data.playList[index].dead) {
+      actionList = [{
+        bindtap: 'appoint',
+        text: '移交法官'
+      }]
+    }
+    if(this.data.playList[index].roleId ==5){
+      actionList.push({
+        bindtap: 'gun',
+        text: '猎人开枪'
       })
     }
     this.setData({

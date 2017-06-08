@@ -48,6 +48,8 @@
   height: 50%;
   position: fixed;
   bottom: 10rpx;
+  left: 50%;
+  margin-left: -300rpx;
 }
 .player-item {
   margin-bottom: 20rpx;

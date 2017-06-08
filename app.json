@@ -1,12 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/rank/detail/rank",
+    "pages/rank/rank/rank",
     "pages/rank/list/rank",
+    "pages/rank/detail/rank",
+    "pages/god/config/config",
+    "pages/god/room/room",
     "pages/god/game/day/day",
     "pages/god/game/night/night",
-    "pages/god/room/room",
-    "pages/god/config/config",
     "pages/player/room/room",
     "pages/player/join/join",
     "pages/logs/logs",

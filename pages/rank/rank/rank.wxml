@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<view class="rank-content">
+  <view class="rank-title">天梯排行榜</view>
+  <view class="rank-item" wx:for="{{playerList}}" wx:for-item="player">
+    <view class="rank-item-rank">{{player.rank}}</view>
+    <view class="rank-item-image">
+      <image class="rank-image" src="{{player.userAvatar}}"></image>
+    </view>
+    <view class="rank-item-name">{{player.userName}}</view>
+    <view class="rank-item-score">{{player.score}}</view>
+  </view>
+</view>

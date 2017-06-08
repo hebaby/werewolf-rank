@@ -75,6 +75,11 @@ App({
     that.globalData.dayIndex = 0;
   },
 
+  setDay: function(day){
+    var that = this;
+    that.globalData.dayIndex = day;
+  },
+
   globalData:{
     userInfo:null,
     roleDict: {
@@ -88,7 +93,6 @@ App({
         '7':'狼人自爆',
         '8':'公投出局',
         '9':'移交警徽',
-        '10':'游戏结束'
     },
     gameResultDict:{
       '0':'未分出胜负',
@@ -147,6 +151,21 @@ App({
       content: '请选择警徽移交的玩家',
       tips: '警徽移交的玩家是:',
       actionId: 9
+    },{
+      title: '警徽' ,
+      content: '请选择警徽移交的玩家',
+      tips: '警徽移交的玩家是:',
+      actionId: 10
+    },{
+      title: '警徽' ,
+      content: '请选择警徽移交的玩家',
+      tips: '警徽移交的玩家是:',
+      actionId: 11
+    },{
+      title: '警徽' ,
+      content: '请选择警徽移交的玩家',
+      tips: '警徽移交的玩家是:',
+      actionId: 12
     }],
     dayIndex:0,
     BASE_URL: 'https://97750414.qcloud.la'

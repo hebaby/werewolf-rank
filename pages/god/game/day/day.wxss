@@ -44,7 +44,8 @@
 }
 .info-button{
   position: absolute;
-  bottom: 5rpx;
+  width: 100%;
+  bottom: 10%;
 }
 .info-button-style {
   margin-right: 30rpx;
@@ -56,6 +57,8 @@
   height: 50%;
   position: fixed;
   bottom: 10rpx;
+  left: 50%;
+  margin-left: -300rpx;
 }
 .player-item {
   margin-bottom: 20rpx;
@@ -118,4 +121,16 @@
   bottom: 5rpx;
   right: 5rpx;
   color: red;
+}
+
+
+.confirm-info{
+  font-size: 16px;
+  text-align: center;
+}
+.confirm-input{
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
 }

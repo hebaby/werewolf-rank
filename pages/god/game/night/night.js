@@ -108,10 +108,6 @@ Page({
                 icon: 'loading',
                 duration: 2000
               })
-            this.setData({
-              actionList: this.data.actionList.pop(),
-              actionMap: this.data.actionMap.pop()
-            })
           }
         }
       })

@@ -26,8 +26,9 @@
 }
 
 .config-detail {
-  margin: 20rpx;
+  margin: 20rpx auto;
   text-align: left;
+  width: 80%;
 }
 .config-detail-item {
   display: block;
@@ -44,4 +45,10 @@
 }
 .detail-number {
   display: inline-block;
+}
+
+.config-enter-room{
+  position: absolute;
+  top: 0;
+  right: 10px;
 }

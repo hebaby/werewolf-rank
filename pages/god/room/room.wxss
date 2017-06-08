@@ -11,10 +11,8 @@
 
 .config-area {
   font-size: 14px;
-  position: fixed;
+  /*position: fixed;*/
   height: 48%;
-  top: 0;
-  bottom: 50%;
 }
 .config-room {
   font-size: 16px;
@@ -51,6 +49,8 @@
   height: 50%;
   position: fixed;
   bottom: 10rpx;
+  left: 50%;
+  margin-left: -300rpx;
 }
 .player-item {
   margin-bottom: 20rpx;
@@ -85,3 +85,4 @@
   line-height: 130rpx;
   font-size: 12px;
 }
+

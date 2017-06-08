@@ -7,10 +7,10 @@
         {{userInfo.userScore}}
       </view>
     </view>
-    <view class="rank-title-item rank-tile-rank">
+    <view class="rank-title-item rank-tile-rank" bindtap="enterRank">
       天梯排名
       <view class="rank-title-number" wx:if="{{userInfo.userRank!=0}}">
-        {{userInfo.rank}}
+        {{userInfo.userRank}}
       </view>
       <view class="rank-title-number-default" wx:if="{{userInfo.userRank==0}}">
         未上榜
@@ -18,7 +18,7 @@
     </view>
   </view>
 
-  <view class="rank-list">
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refresh" class="rank-list">
     <view class="rank-item"  wx:for="{{historyList}}" wx:for-item="history" data-index="{{history.gameId}}" bindtap="checkDetail">
       <view class="rank-item-result">
         <view class="result-win" wx:if="{{history.result==1||history.result==2}}"> 
@@ -53,6 +53,10 @@
           </view>
         </view>
       </view>
+      <view class="rank-item-info">
+          <text class="rank-item-room">房间号：{{history.gameId}}  </text>
+          <text class="rank-item-time">{{history.created}}</text>
+      </view>
     </view>
-  </view>
+  </scroll-view>
 </view>
